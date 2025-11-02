@@ -1,0 +1,24 @@
+server:
+  port: 8092
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  h2:
+    console:
+      enabled: false
+      path: /h2-console
+  kafka:
+    # Перечисляем всех наших брокеров
+    bootstrap-servers: broker:9092
+    producer:
+      # Настраиваем сериализацию сообщений
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+kafka:
+  topics:
+    long-topic: long-topic
+    list-long-topic: list-long-topic

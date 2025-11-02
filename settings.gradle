@@ -1,0 +1,4 @@
+rootProject.name = 'dw-communication'
+include 'builder'
+include 'reader'
+
